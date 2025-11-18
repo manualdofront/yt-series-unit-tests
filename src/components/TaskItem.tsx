@@ -53,6 +53,7 @@ export const TaskItem = ({ task, onToggle, onDelete }: TaskItemProps) => {
           >
             {task.completed ? 'Completed' : 'Pending'}
           </span>
+          {/* Date of creation */}
           <span className='text-xs text-gray-400'>{new Date(task.createdAt).toLocaleDateString()}</span>
         </div>
       </div>
@@ -60,7 +61,7 @@ export const TaskItem = ({ task, onToggle, onDelete }: TaskItemProps) => {
       {/* Delete Button */}
       <button
         onClick={() => onDelete(task.id)}
-        className='opacity-0 group-hover:opacity-100 p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-200'
+        className='opacity-0 cursor-pointer group-hover:opacity-100 p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-200'
         title='Delete task'
       >
         <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
