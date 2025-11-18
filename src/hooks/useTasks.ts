@@ -32,14 +32,14 @@ export const useTasks = (): UseTasksReturn => {
           if (Array.isArray(parsedTasks)) {
             const validTasks = parsedTasks
               .filter(
-                (task: any) =>
+                (task: Task) =>
                   task &&
                   typeof task.id === 'string' &&
                   typeof task.title === 'string' &&
                   typeof task.completed === 'boolean' &&
                   task.createdAt
               )
-              .map((task: any) => ({
+              .map((task: Task) => ({
                 ...task,
                 createdAt: new Date(task.createdAt),
               }))
