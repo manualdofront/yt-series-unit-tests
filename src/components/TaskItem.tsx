@@ -15,7 +15,7 @@ export const TaskItem = ({ task, onToggle, onDelete }: TaskItemProps) => {
     >
       {/* Custom Checkbox */}
       <div className='relative'>
-        <input type='checkbox' checked={task.completed} onChange={() => onToggle(task.id)} className='sr-only' />
+        <input type='checkbox' aria-label={task.title} checked={task.completed} onChange={() => onToggle(task.id)} className='sr-only' />
         <div
           onClick={() => onToggle(task.id)}
           className={`w-6 h-6 rounded-lg border-2 cursor-pointer transition-all duration-200 flex items-center justify-center ${
