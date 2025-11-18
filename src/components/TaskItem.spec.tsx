@@ -45,5 +45,26 @@ describe('TaskItem', () => {
 
     expect(mockOnToggle).toHaveBeenCalledTimes(1);
     expect(mockOnToggle).toHaveBeenCalledWith("1"); // ID da task
-  }); 
+  });
+
+  test('chama onDelete quando botão deletar é clicado', async () => {
+    const user = userEvent.setup();
+    
+    render(
+      <TaskItem 
+        task={mockTask} 
+        onDelete={mockOnDelete} 
+        onToggle={mockOnToggle} 
+      />
+    );
+
+    const deleteButton = screen.getByRole('button', { 
+      name: /Delete task/i 
+    });
+    
+    await user.click(deleteButton);
+
+    expect(mockOnDelete).toHaveBeenCalledTimes(1);
+    expect(mockOnDelete).toHaveBeenCalledWith('1');
+  });
 });
