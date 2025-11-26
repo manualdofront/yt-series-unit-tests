@@ -4,7 +4,7 @@ import { TaskItem } from './TaskItem';
 
 describe('TaskItem', () => {
   const mockTask = {
-    id: '1',
+    id: '999',
     title: 'Assistir a playlist de testes do Manual do Front',
     completed: false,
     createdAt: new Date()
@@ -22,7 +22,7 @@ describe('TaskItem', () => {
       />
     );
 
-    const title = screen.getByText('Assistir a playlist de testes do Manual do Front'); // ou mocTask.title
+    const title = screen.getByText('Assistir a playlist de testes do Manual do Front'); // ou mockTask.title
     expect(title).toBeInTheDocument();
   });
 
@@ -44,7 +44,7 @@ describe('TaskItem', () => {
     await user.click(checkbox);
 
     expect(mockOnToggle).toHaveBeenCalledTimes(1);
-    expect(mockOnToggle).toHaveBeenCalledWith("1"); // ID da task
+    expect(mockOnToggle).toHaveBeenCalledWith("999"); // ID da task
   });
 
   test('chama onDelete quando botão deletar é clicado', async () => {
@@ -65,7 +65,7 @@ describe('TaskItem', () => {
     await user.click(deleteButton);
 
     expect(mockOnDelete).toHaveBeenCalledTimes(1);
-    expect(mockOnDelete).toHaveBeenCalledWith('1');
+    expect(mockOnDelete).toHaveBeenCalledWith('999');
   });
 
   describe('classe completed', () => {
