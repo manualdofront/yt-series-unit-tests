@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TaskForm } from '../../src/components/TaskForm';
 
-describe('Exemplo', () => {
+describe.skip('Exemplo', () => {
   // ✅ COM LIMPEZA
   afterEach(() => {
     jest.restoreAllMocks();

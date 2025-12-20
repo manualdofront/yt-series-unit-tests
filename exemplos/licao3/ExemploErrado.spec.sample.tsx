@@ -1,7 +1,7 @@
 import React from 'react';
 import { TaskForm } from '../../src/components/TaskForm';
 
-describe('Exemplo', () => {
+describe.skip('Exemplo', () => {
   // ❌ SEM LIMPEZA (o que eu fazia)
   test('componente A carrega dados', async () => {
     global.fetch = jest.fn(() => 

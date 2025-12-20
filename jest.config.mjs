@@ -18,10 +18,14 @@ const config = {
   // clearMocks: false,
 
   // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: false,
+  collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: undefined,
+  collectCoverageFrom: [
+    "src/components/*.{js,jsx,ts,tsx}",
+    "src/hooks/*.{js,jsx,ts,tsx}",
+    "src/utils/*.{js,jsx,ts,tsx}",
+  ],
 
   // The directory where Jest should output its coverage files
   // coverageDirectory: undefined,
@@ -140,7 +144,7 @@ const config = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
+  setupFilesAfterEnv: ["<rootDir>/src/setupTests.js"],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
